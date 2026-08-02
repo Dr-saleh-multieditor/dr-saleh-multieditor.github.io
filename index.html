@@ -4,46 +4,181 @@ html<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Saleh Multi Editor | Professional ECU Tuning Software</title>
+    <meta name="description" content="Official ECU tuning software by Dr. Saleh Hasan. Professional Multi Editors for Toyota tuning, Nissan DTC off, Honda, Kia, Hyundai, FCA, GM, and Immo Doctor v7.xx modules.">
+    <meta name="keywords" content="toyota tuning, nissan dtc off, ecu tuning software, immo doctor, dr saleh multi editor, file editor ecu, vmax off, lambda off">
     <style>
         :root { --primary: #007bff; --dark: #1e293b; --light: #f8fafc; --accent: #f59e0b; }
-        body { font-family: system-ui, sans-serif; margin: 0; padding: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
-        header { background: var(--dark); color: white; padding: 3rem 1rem; text-align: center; border-bottom: 4px solid var(--primary); }
-        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-        .policy-banner { background: #fffbeb; border-left: 6px solid var(--accent); padding: 2rem; border-radius: 8px; margin-bottom: 3rem; }
-        .policy-banner li { font-weight: 600; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .card { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); }
-        .cta-section { background: #e0f2fe; padding: 2.5rem; border-radius: 8px; text-align: center; margin-top: 3rem; }
-        .btn { display: inline-block; padding: 0.9rem 2rem; margin: 0.5rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: white; }
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; background: var(--light); color: var(--dark); line-height: 1.5; }
+        header { background: var(--dark); color: white; padding: 2.5rem 1rem; text-align: center; border-bottom: 4px solid var(--primary); }
+        header h1 { margin: 0; font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px; }
+        header p { margin: 0.5rem 0 0 0; color: #94a3b8; font-size: 1.1rem; }
+        .container { max-width: 1050px; margin: 2rem auto; padding: 0 1.2rem; box-sizing: border-box; }
+        .policy-banner { background: #fffbeb; border-left: 6px solid var(--accent); padding: 1.5rem; border-radius: 10px; margin-bottom: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .policy-banner h3 { margin: 0 0 0.75rem 0; color: #92400e; font-size: 1.2rem; }
+        .policy-banner ul { margin: 0; padding-left: 1.25rem; }
+        .policy-banner li { font-weight: 600; color: #78350f; margin-bottom: 0.4rem; font-size: 0.95rem; }
+        h2 { border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; margin: 2rem 0 1.5rem 0; font-size: 1.5rem; color: var(--dark); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.04); border-top: 5px solid var(--primary); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.08); }
+        .image-container { width: 100%; height: 180px; background: #e2e8f0; position: relative; border-bottom: 1px solid #e2e8f0; }
+        .image-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .image-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #64748b; font-size: 0.9rem; font-weight: 600; text-align: center; background: #e2e8f0; z-index: 1; }
+        .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .card h3 { margin: 0 0 0.75rem 0; color: var(--dark); font-size: 1.25rem; font-weight: 700; }
+        .feature-list { margin: 0; padding: 0; list-style: none; }
+        .feature-list li { position: relative; padding-left: 1.25rem; margin-bottom: 0.4rem; color: #475569; font-size: 0.9rem; font-weight: 500; }
+        .feature-list li::before { content: "✓"; position: absolute; left: 0; color: #22c55e; font-weight: bold; }
+        .feature-list li.highlight { font-style: italic; color: #64748b; }
+        .feature-list li.highlight::before { content: "+"; color: var(--accent); }
+        .cta-section { background: #e0f2fe; padding: 2.5rem 1.5rem; border-radius: 12px; text-align: center; margin-top: 3.5rem; border: 1px solid #bae6fd; }
+        .cta-section h3 { margin: 0 0 0.5rem 0; color: #0369a1; font-size: 1.4rem; }
+        .cta-section p { margin: 0 0 1.5rem 0; color: #0c4a6e; font-size: 1rem; }
+        .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; font-size: 1.05rem; transition: background 0.2s; min-width: 200px; box-sizing: border-box; }
         .btn-wa { background: #25D366; }
+        .btn-wa:hover { background: #1ebd57; }
         .btn-tg { background: #0088cc; }
+        .btn-tg:hover { background: #0077b3; }
+        footer { text-align: center; padding: 2.5rem 1rem; color: #64748b; font-size: 0.9rem; margin-top: 4rem; border-top: 1px solid #e2e8f0; }
     </style>
 </head>
 <body>
-<header><h1>Dr. Saleh Multi Editor</h1><p>Professional ECU Tuning Solutions</p></header>
+
+<header>
+    <h1>Dr. Saleh Multi Editor</h1>
+    <p>Professional Vehicle ECU Tuning Solutions & Calibrations</p>
+</header>
+
 <div class="container">
+    
     <div class="policy-banner">
         <h3>⚠️ Important Software Terms</h3>
         <ul>
             <li>Updates: 100% Free Lifetime Updates</li>
             <li>Support: 100% Free Lifetime Technical Support</li>
-            <li>Activation: Hardware Locked to 1 PC (Lifetime Activation)</li>
+            <li>Activation Policy: Hardware Locked to 1 PC (Lifetime Activation)</li>
         </ul>
     </div>
+
     <h2>Active Software Solutions</h2>
     <div class="grid">
-        <div class="card"><h3>Toyota Multi Editor</h3><p>Professional tuning and mapping.</p></div>
-        <div class="card"><h3>Nissan Multi Editor</h3><p>Advanced DTC off and parameter tuning.</p></div>
-        <div class="card"><h3>Kia & Hyundai Multi Editor</h3><p>Powertrain controller file editing.</p></div>
-        <div class="card"><h3>FCA & GM Multi Editor</h3><p>Multi-platform adjustments.</p></div>
-        <div class="card"><h3>Honda Multi Editor</h3><p>Precise system override and modifications.</p></div>
-        <div class="card"><h3>Immo Doctor v7.xx</h3><p>Immobilizer repair and data alignment.</p></div>
+        <div class="card">
+            <div class="image-container">
+                <img src="toyota.jpg" alt="Toyota Multi Editor" onerror="this.style.display='none';">
+                <div class="image-placeholder">Toyota Screenshot Box</div>
+            </div>
+            <div class="card-content">
+                <h3>Toyota Multi Editor</h3>
+                <ul class="feature-list">
+                    <li>DTC OFF (Fault Code Removal)</li>
+                    <li>SYSTEM OFF Calibrations</li>
+                    <li>Basic Tuning (VMAX, Idle, RPM limits)</li>
+                    <li class="highlight">More options added automatically in updates</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card 2: Nissan -->
+        <div class="card">
+            <div class="image-container">
+                <img src="nissan.jpg" alt="Nissan Multi Editor" onerror="this.style.display='none';">
+                <div class="image-placeholder">Nissan Screenshot Box</div>
+            </div>
+            <div class="card-content">
+                <h3>Nissan Multi Editor</h3>
+                <ul class="feature-list">
+                    <li>DTC OFF (Fault Code Removal)</li>
+                    <li>SYSTEM OFF Calibrations</li>
+                    <li>Basic Tuning (VMAX, Idle, RPM limits)</li>
+                    <li class="highlight">More options added automatically in updates</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card 3: Kia & Hyundai -->
+        <div class="card">
+            <div class="image-container">
+                <img src="kia-hyundai.jpg" alt="Kia & Hyundai Multi Editor" onerror="this.style.display='none';">
+                <div class="image-placeholder">Kia & Hyundai Screenshot Box</div>
+            </div>
+            <div class="card-content">
+                <h3>Kia & Hyundai Multi Editor</h3>
+                <ul class="feature-list">
+                    <li>DTC OFF (Fault Code Removal)</li>
+                    <li>SYSTEM OFF Calibrations</li>
+                    <li>Basic Tuning (VMAX, Idle, RPM limits)</li>
+                    <li class="highlight">More options added automatically in updates</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card 4: FCA & GM -->
+        <div class="card">
+            <div class="image-container">
+                <img src="fca-gm.jpg" alt="FCA & GM Multi Editor" onerror="this.style.display='none';">
+                <div class="image-placeholder">FCA & GM Screenshot Box</div>
+            </div>
+            <div class="card-content">
+                <h3>FCA & GM Multi Editor</h3>
+                <ul class="feature-list">
+                    <li>DTC OFF (Fault Code Removal)</li>
+                    <li>SYSTEM OFF Calibrations</li>
+                    <li>Basic Tuning (VMAX, Idle, RPM limits)</li>
+                    <li class="highlight">More options added automatically in updates</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card 5: Honda -->
+        <div class="card">
+            <div class="image-container">
+                <img src="honda.jpg" alt="Honda Multi Editor" onerror="this.style.display='none';">
+                <div class="image-placeholder">Honda Screenshot Box</div>
+            </div>
+            <div class="card-content">
+                <h3>Honda Multi Editor</h3>
+                <ul class="feature-list">
+                    <li>DTC OFF (Fault Code Removal)</li>
+                    <li>SYSTEM OFF Calibrations</li>
+                    <li>Basic Tuning (VMAX, Idle, RPM limits)</li>
+                    <li class="highlight">More options added automatically in updates</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card 6: Immo Doctor v7.xx -->
+        <div class="card">
+            <div class="image-container">
+                <img src="immo-doctor.jpg" alt="Immo Doctor v7.xx" onerror="this.style.display='none';">
+                <div class="image-placeholder">Immo Doctor Screenshot Box</div>
+            </div>
+            <div class="card-content">
+                <h3>Immo Doctor v7.xx</h3>
+                <ul class="feature-list">
+                    <li>Immobilizer Bypassing & Repairs</li>
+                    <li>SYSTEM OFF Protection Profiles</li>
+                    <li>Module Data Alignment Tools</li>
+                    <li class="highlight">More options added automatically in updates</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
+
     <div class="cta-section">
-        <h3>How to Purchase & Get Support</h3>
-        <a href="https://wa.me" class="btn btn-wa">Contact WhatsApp</a>
-        <a href="https://t.me" class="btn btn-tg">Contact Telegram</a>
+        <h3>Order Software Licenses Directly</h3>
+        <p>Message me on your preferred channel for instant software pricing and custom key registration activation.</p>
+        <div class="btn-group">
+            <a href="https://wa.me" target="_blank" class="btn btn-wa">Message on WhatsApp</a>
+            <a href="https://t.me" target="_blank" class="btn btn-tg">Message on Telegram</a>
+        </div>
     </div>
+
+<footer>
+    <p>&copy; 2026 Dr. Saleh Hasan (Dr. Saleh Multi Editor). All rights reserved. Secure Static Portfolio Architecture.</p>
+</footer>
+
 </div>
 </body>
 </html>
