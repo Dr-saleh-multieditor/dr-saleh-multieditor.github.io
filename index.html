@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Saleh Multi Editor | Professional ECU Tuning Software</title>
-    <meta name="description" content="Official ECU tuning software by Dr. Saleh Hasan. Professional Multi Editors for Toyota tuning, Nissan DTC off, Honda, Kia, Hyundai, FCA, GM, and Immo Doctor v7.xx modules.">
-    <meta name="keywords" content="toyota tuning, nissan dtc off, ecu tuning software, immo doctor, dr saleh multi editor, file editor ecu, vmax off, lambda off">
+    <meta name="description" content="Official ECU tuning software by Dr. Saleh Hasan. Professional Multi Editors for Toyota tuning, Nissan DTC off, Honda, Kia, Hyundai, FCA, GM, SRT Editor and Immo Doctor modules.">
+    <meta name="keywords" content="toyota tuning, nissan dtc off, srt editor, ecu tuning software, immo doctor, dr saleh multi editor, file editor ecu, vmax off, lambda off">
     <style>
         :root { --primary: #007bff; --dark: #1e293b; --light: #f8fafc; --accent: #f59e0b; }
         body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; background: var(--light); color: var(--dark); line-height: 1.5; }
@@ -21,8 +21,8 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .card { background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.04); border-top: 5px solid var(--primary); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
         .card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.08); }
-        .image-container { width: 100%; height: 180px; background: #e2e8f0; position: relative; border-bottom: 1px solid #e2e8f0; }
-        .image-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .image-container { width: 100%; height: 200px; background: #e2e8f0; position: relative; border-bottom: 1px solid #e2e8f0; }
+        .image-container img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; top: 0; left: 0; z-index: 2; }
         .image-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #64748b; font-size: 0.9rem; font-weight: 600; text-align: center; background: #e2e8f0; z-index: 1; }
         .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
         .card h3 { margin: 0 0 0.75rem 0; color: var(--dark); font-size: 1.25rem; font-weight: 700; }
@@ -32,15 +32,11 @@
         .feature-list li.highlight { font-style: italic; color: #64748b; }
         .feature-list li.highlight::before { content: "+"; color: var(--accent); }
         .cta-section { background: #e0f2fe; padding: 2.5rem 1.5rem; border-radius: 12px; text-align: center; margin-top: 3.5rem; border: 1px solid #bae6fd; }
-        .cta-section h3 { margin: 0 0 0.5rem 0; color: #0369a1; font-size: 1.4rem; }
-        .cta-section p { margin: 0 0 1.5rem 0; color: #0c4a6e; font-size: 1rem; }
         .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; font-size: 1.05rem; transition: background 0.2s; min-width: 200px; box-sizing: border-box; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; font-size: 1.05rem; min-width: 200px; box-sizing: border-box; }
         .btn-wa { background: #25D366; }
-        .btn-wa:hover { background: #1ebd57; }
         .btn-tg { background: #0088cc; }
-        .btn-tg:hover { background: #0077b3; }
-        footer { text-align: center; padding: 2.5rem 1rem; color: #64748b; font-size: 0.9rem; margin-top: 4rem; border-top: 1px solid #e2e8f0; }
+        footer { text-align: center; padding: 2.5rem 1rem; color: #64748b; margin-top: 4rem; border-top: 1px solid #e2e8f0; }
     </style>
 </head>
 <body>
@@ -58,16 +54,33 @@
             <li>Updates: 100% Free Lifetime Updates</li>
             <li>Support: 100% Free Lifetime Technical Support</li>
             <li>Activation Policy: Hardware Locked to 1 PC (Lifetime Activation)</li>
-            <li>Videos here: https://www.youtube.com/@vaselovaselo3618/videos</li>
         </ul>
     </div>
 
     <h2>Active Software Solutions</h2>
     <div class="grid">
+
+        <!-- SRT Editor -->
+        <div class="card" style="border-top-color: var(--accent);">
+            <div class="image-container">
+                <img src="./srt editor.JPG" alt="SRT Editor" onerror="this.style.display='none';">
+                <div class="image-placeholder">Loading Interface Display...</div>
+            </div>
+            <div class="card-content">
+                <h3>SRT Editor</h3>
+                <ul class="feature-list">
+                    <li>Primary Modifications: Speed, Temperature, Idle, RPM</li>
+                    <li>Supported Now: Kia, Hyundai, FCA</li>
+                    <li class="highlight">Other vehicle models added in updates</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Toyota -->
         <div class="card">
             <div class="image-container">
-                <img src="toyota.jpg" alt="Toyota Multi Editor" onerror="this.style.display='none';">
-                <div class="image-placeholder">Toyota Screenshot Box</div>
+                <img src="./toyota.jpg" alt="Toyota Multi Editor" onerror="this.style.display='none';">
+                <div class="image-placeholder">Loading Interface Display...</div>
             </div>
             <div class="card-content">
                 <h3>Toyota Multi Editor</h3>
@@ -80,11 +93,11 @@
             </div>
         </div>
 
-        <!-- Card 2: Nissan -->
+        <!-- Nissan -->
         <div class="card">
             <div class="image-container">
-                <img src="nissan.jpg" alt="Nissan Multi Editor" onerror="this.style.display='none';">
-                <div class="image-placeholder">Nissan Screenshot Box</div>
+                <img src="./nissan.jpg" alt="Nissan Multi Editor" onerror="this.style.display='none';">
+                <div class="image-placeholder">Loading Interface Display...</div>
             </div>
             <div class="card-content">
                 <h3>Nissan Multi Editor</h3>
@@ -96,28 +109,28 @@
                 </ul>
             </div>
         </div>
-
-        <!-- Card 3: Kia & Hyundai -->
+        <!-- Kia & Hyundai -->
         <div class="card">
             <div class="image-container">
-                <img src="kia-hyundai.jpg" alt="Kia & Hyundai Multi Editor" onerror="this.style.display='none';">
-                <div class="image-placeholder">Kia & Hyundai Screenshot Box</div>
+                <img src="./kia-hyundai.jpg" alt="Kia & Hyundai Multi Editor" onerror="this.style.display='none';">
+                <div class="image-placeholder">Loading Interface Display...</div>
             </div>
             <div class="card-content">
                 <h3>Kia & Hyundai Multi Editor</h3>
                 <ul class="feature-list">
                     <li>DTC OFF (Fault Code Removal)</li>
-                    <li>SYSTEM OFF Calibrations</li> 
+                    <li>SYSTEM OFF Calibrations</li>
+                    <li>Basic Tuning (VMAX, Idle, RPM limits)</li>
                     <li class="highlight">More options added automatically in updates</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Card 4: FCA & GM -->
+        <!-- FCA & GM -->
         <div class="card">
             <div class="image-container">
-                <img src="fca-gm.jpg" alt="FCA & GM Multi Editor" onerror="this.style.display='none';">
-                <div class="image-placeholder">FCA & GM Screenshot Box</div>
+                <img src="./fca-gm.jpg" alt="FCA & GM Multi Editor" onerror="this.style.display='none';">
+                <div class="image-placeholder">Loading Interface Display...</div>
             </div>
             <div class="card-content">
                 <h3>FCA & GM Multi Editor</h3>
@@ -130,11 +143,11 @@
             </div>
         </div>
 
-        <!-- Card 5: Honda -->
+        <!-- Honda -->
         <div class="card">
             <div class="image-container">
-                <img src="honda.jpg" alt="Honda Multi Editor" onerror="this.style.display='none';">
-                <div class="image-placeholder">Honda Screenshot Box</div>
+                <img src="./honda.jpg" alt="Honda Multi Editor" onerror="this.style.display='none';">
+                <div class="image-placeholder">Loading Interface Display...</div>
             </div>
             <div class="card-content">
                 <h3>Honda Multi Editor</h3>
@@ -147,37 +160,23 @@
             </div>
         </div>
 
-        <!-- Card 6: Immo Doctor v7.xx -->
+        <!-- Immo Doctor v7.xx -->
         <div class="card">
             <div class="image-container">
-                <img src="immo-doctor.jpg" alt="Immo Doctor v7.xx" onerror="this.style.display='none';">
-                <div class="image-placeholder">Immo Doctor Screenshot Box</div>
+                <img src="./immo-doctor.jpg" alt="Immo Doctor v7.xx" onerror="this.style.display='none';">
+                <div class="image-placeholder">Loading Interface Display...</div>
             </div>
             <div class="card-content">
                 <h3>Immo Doctor v7.xx</h3>
                 <ul class="feature-list">
                     <li>Immobilizer Bypassing & Repairs</li>
-                    <li>Inculde Many ECUs KIA&HYUNDA,HONDA,Mnay Others</li>
+                    <li>SYSTEM OFF Protection Profiles</li>
                     <li>Module Data Alignment Tools</li>
-                    <li class="highlight">More ECU added automatically in updates</li>
+                    <li class="highlight">More options added automatically in updates</li>
                 </ul>
             </div>
         </div>
-<!-- Card 7: SRT EDITOR -->
-        <div class="card">
-            <div class="image-container">
-                <img src="srt-editor.jpg" alt="srt-editor" onerror="this.style.display='none';">
-                <div class="image-placeholder">srt-editor Screenshot Box</div>
-            </div>
-            <div class="card-content">
-                <h3>SRT EDITOR</h3>
-                <ul class="feature-list">
-                    <li>Speed, Temperature, RPM, IDLE</li>
-                    <li>Inculde Many ECUs KIA&HYUNDA,FCA</li>
-                    <li class="highlight">More ECU added automatically in updates</li>
-                </ul>
-            </div>
-        </div>
+
     </div>
 
     <div class="cta-section">
@@ -185,7 +184,7 @@
         <p>Message me on your preferred channel for instant software pricing and custom key registration activation.</p>
         <div class="btn-group">
             <a href="https://wa.me" target="_blank" class="btn btn-wa">Message on WhatsApp</a>
-           <a href="tg://resolve?domain=Libfork" class="btn btn-tg">Open in Telegram App (@Libfork)</a>
+            <a href="tg://resolve?domain=Libfork" class="btn btn-tg">Open in Telegram App</a>
         </div>
     </div>
 
