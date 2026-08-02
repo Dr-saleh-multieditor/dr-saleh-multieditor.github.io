@@ -5,49 +5,56 @@ html<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Saleh Multi Editor | Professional Toyota Tuning & Nissan DTC Off Software</title>
+    <meta name="description" content="Official ECU tuning software by Dr. Saleh Hasan. Professional Multi Editors for Toyota tuning, Nissan DTC off, Honda, Kia, Hyundai, FCA, GM, and Immo Doctor v7.xx modules.">
     <style>
-        :root { --primary: #007bff; --dark: #1e293b; --light: #f8fafc; --notice: #f59e0b; }
-        body { font-family: system-ui, sans-serif; margin: 0; background: var(--light); color: var(--dark); }
-        .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
-        .card { background: white; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); padding: 1.5rem; }
-        .software-img { width: 100%; height: 200px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; }
-        .btn { display: inline-block; padding: 0.9rem 2rem; border-radius: 6px; text-decoration: none; color: white; font-weight: bold; }
+        :root { --primary: #007bff; --dark: #1e293b; --light: #f8fafc; --accent: #f59e0b; }
+        body { font-family: system-ui, sans-serif; margin: 0; padding: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
+        header { background: var(--dark); color: white; padding: 3rem 1rem; text-align: center; border-bottom: 4px solid var(--primary); }
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+        .intro, .policy-banner { background: white; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .policy-banner { border-left: 6px solid var(--accent); background: #fffbeb; }
+        .policy-banner h3 { margin-top: 0; color: #92400e; }
+        .policy-banner li { margin-bottom: 0.5rem; font-weight: 600; }
+        h2 { border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); overflow: hidden; }
+        .image-container { width: 100%; height: 200px; background: #e2e8f0; position: relative; }
+        .image-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .image-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #64748b; font-size: 0.9rem; text-align: center; padding: 1rem; }
+        .card-content { padding: 1.5rem; }
+        .card h3 { margin-top: 0; color: var(--dark); font-size: 1.2rem; }
+        .badge { background: #e2e8f0; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; }
+        .cta-section { background: #e0f2fe; padding: 2.5rem; border-radius: 8px; text-align: center; margin-top: 3rem; }
+        .btn { display: inline-block; padding: 0.85rem 1.8rem; margin: 0.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; color: white; }
         .btn-wa { background: #25D366; }
         .btn-tg { background: #0088cc; }
+        footer { text-align: center; padding: 2rem; color: #64748b; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Dr. Saleh Multi Editor</h1>
-        
-        <!-- Licensing Notice -->
-        <div class="card" style="border-left: 6px solid var(--notice); background: #fffbeb; margin-bottom: 2rem;">
-            <h3>⚠️ Licensing & Support</h3>
-            <ul>
-                <li>Free Updates, Technical Support</li>
-                <li>Hardware ID Lock: 1 PC Only</li>
-            </ul>
-        </div>
-
-        <!-- Software Grid -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            <!-- Example Card Structure (Repeated for Toyota, Nissan, Kia, Hyundai, FCA, GM, Honda, Immo) -->
-            <div class="card">
-                <div class="software-img">
-                    <img src="module.jpg" onerror="this.style.display='none';">
-                    <span>[Screenshot Placeholder]</span>
-                </div>
-                <h3>Module Name</h3>
-                <p>Description...</p>
-            </div>
-        </div>
-
-        <!-- Contact -->
-        <div class="card" style="text-align: center; margin-top: 3rem;">
-            <h3>Order Licenses</h3>
-            <a href="https://wa.me" class="btn btn-wa">WhatsApp</a>
-            <a href="https://t.me" class="btn btn-tg">Telegram</a>
-        </div>
-    </div>
+<header><h1>Dr. Saleh Multi Editor</h1><p>Professional Vehicle ECU Tuning Solutions</p></header>
+<div class="container">
+    <section class="intro"><h2>Official Software Portfolio</h2><p>Developed by Dr. Saleh Hasan.</p>
+    <section class="policy-banner">
+        <h3>⚠️ Important Software Terms</h3>
+        <ul>
+            <li>Updates: 100% Free Lifetime</li>
+            <li>Support: 100% Free Lifetime</li>
+            <li>Activation Policy: Hardware Locked to 1 PC for a 1-Year Activation Lease</li>
+        </ul>
+    
+    <h2>Active Software Solutions</h2>
+    <main class="grid">
+        <!-- Add cards here, utilizing the CSS for images -->
+        <div class="card"><div class="image-container"><img src="toyota.jpg" alt="Toyota Multi Editor" onerror="this.style.display='none';"><div class="image-placeholder">Toyota Screenshot</div></div><div class="card-content"><h3>Toyota Multi Editor <span class="badge">Basic & Advanced</span></h3></div></div>
+        <!-- (Add other card divs for nissan, kia, fca, honda, immo here using similar structure) -->
+    </main>
+    <section class="cta-section">
+        <h3>Contact for Purchase</h3>
+        <a href="https://wa.me" class="btn btn-wa">Message on WhatsApp</a>
+        <a href="https://t.me" class="btn btn-tg">Message on Telegram</a>
+    
+</div>
+<footer><p>&copy; 2026 Dr. Saleh Hasan</p></footer>
 </body>
 </html>
